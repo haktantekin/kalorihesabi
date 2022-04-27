@@ -1,0 +1,604 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.text-center {
+  text-align: center;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  display: swap;
+  font-display: fallback;
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+@mixin s1200 {
+  @media screen and (max-width: 1242px) {
+    @content;
+  }
+}
+@mixin s1024 {
+  @media screen and (max-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin s991 {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+@mixin s768 {
+  @media screen and (max-width: 769px) {
+    @content;
+  }
+}
+@mixin s500 {
+  @media screen and (max-width: 550px) {
+    @content;
+  }
+}
+@mixin s375 {
+  @media screen and (max-width: 415px) {
+    @content;
+  }
+}
+
+.blue {
+  background-color: #004b8c;
+  color: #ffffff;
+}
+.light-blue {
+  background-color: #75bfff;
+  color: #ffffff;
+  line-height: 40px;
+  em {
+    color: #024580;
+  }
+  a {
+    color: #ffffff;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #eeeeee;
+  }
+}
+
+.red {
+  background-color: #bb0202;
+  color: #ffffff;
+}
+.light-red {
+  background-color: #efd6d6;
+  color: #bb0202;
+  a {
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
+
+.yellow {
+  background-color: #f3e000;
+  color: #000000;
+}
+.light-yellow {
+  background-color: #fffbc7;
+  color: #ffffff;
+  a {
+    color: #000000;
+    font-weight: 600;
+  }
+}
+
+.default-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  text-align: center;
+  @include s991 {
+    width: 100%;
+  }
+  .logo {
+    font-family: "Passion One", cursive;
+    font-size: 40px;
+    color: #288dab;
+  }
+
+  .default-nav {
+    margin-top: 20px;
+    ul {
+      display: flex;
+      justify-content: center;
+      @include s991 {
+        flex-wrap: wrap;
+      }
+      li {
+        margin-right: 10px;
+        @include s991 {
+          margin-bottom: 10px;
+        }
+        a {
+          font-size: 12px;
+          color: #2f3233;
+          padding-bottom: 6px;
+          border-bottom: 1px dashed #2f3233;
+        }
+      }
+    }
+  }
+}
+
+.search-box {
+  width: 50%;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  @include s991 {
+    width: 90%;
+  }
+  input[type="text"] {
+    width: 100%;
+    border: none;
+    height: 50px;
+    margin-top: 30px;
+    padding: 0px 21px;
+    border-radius: 7px;
+    -webkit-box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+    -moz-box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+    box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+    &:focus {
+      outline: none;
+      box-shadow: 0px 0px 5px #288dab;
+      border: 1px solid #288dab;
+    }
+  }
+  .input-button {
+    position: absolute;
+    right: 1px;
+    top: 30px;
+    background-color: #288dab;
+    height: 50px;
+    width: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Passion One", cursive;
+    color: #ffffff;
+    border-radius: 0 7px 7px 0;
+    -webkit-box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+    -moz-box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+    box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+    cursor: pointer;
+
+    .search-button {
+      border: none;
+      background: 0 0;
+      color: #ffffff;
+      font-family: "Passion One", cursive;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+  &.top {
+    margin-top: 40px;
+    width: 100%;
+  }
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #288dab;
+  .header-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    nav {
+      @include s991 {
+        display: none;
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        background-color: #288dab;
+        left: 0;
+        text-align: right;
+        z-index: 1;
+      }
+      li {
+        display: inline-flex;
+        margin: 0 10px;
+        @include s991 {
+          text-align: right;
+          flex-direction: column;
+          margin: 15px;
+          z-index: 55;
+          position: relative;
+        }
+        a {
+          color: #ffffff;
+          font-weight: 300;
+          font-size: 12px;
+        }
+      }
+    }
+    .logo {
+      a{
+        color: #FFFFFF;
+        font-weight: 500;
+      }
+    }
+  }
+  .nav-icon {
+    display: none;
+    color: #ffffff;
+    cursor: pointer;
+    @include s991 {
+      display: block;
+    }
+  }
+}
+.content {
+  margin-top: 40px;
+  color: #288dab;
+  h1 {
+    display: block;
+    width: 100%;
+    font-size: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d6ebfb;
+    margin-bottom: 10px;
+    font-family: "Passion One", cursive;
+    span {
+      color: #a0c5f1;
+    }
+  }
+  > p {
+    font-size: 12px;
+    color: #2f3233;
+    margin: 20px 0;
+    display: block;
+    width: 100%;
+  }
+  &-in {
+    h2 {
+      background-color: #ffffff;
+      display: block;
+      width: 100%;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    .content-section {
+      width: 100%;
+      padding: 30px 0;
+      border-top: 1px solid #d6ebfb;
+      min-height: 200px;
+      font-size: 16px;
+      &.info-section {
+        border-top: 0;
+      }
+      &-left {
+        padding: 20px;
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+        font-family: Poppins, sans-serif;
+        h2 {
+          font-family: "Passion One", cursive;
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+      &-right {
+        padding: 20px;
+        width: 100%;
+        border-radius: 0px 0px 10px 10px;
+        font-family: "Passion One", cursive;
+        a {
+          display: inline;
+        }
+        .list-sentence {
+          width: 100%;
+          li {
+            margin: 20px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #bb0202;
+            letter-spacing: 0.2px;
+            @include s991 {
+              padding-top: 10px;
+            }
+            &:first-child {
+              margin-top: 0;
+            }
+            &:last-child {
+              border: none;
+              margin-bottom: 0;
+              padding-bottom: 0;
+            }
+            strong {
+              font-weight: 600;
+            }
+            span {
+              display: block;
+              width: 100%;
+              font-size: 12px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+      &.videos-section {
+        .content-section-right {
+          flex-direction: column;
+          a {
+            display: block;
+            text-decoration: underline;
+            margin-top: 20px;
+            font-weight: 300;
+            font-size: 12px;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &.blog {
+      background-color: #ffffff;
+      padding: 20px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 30px;
+      color: #073e80;
+      margin-bottom: 100px;
+      margin-top: 30px;
+      p {
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-weight: 600;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        color: #288dab;
+        font-size: 20px;
+      }
+      h3 {
+        font-weight: 600;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        color: #288dab;
+        font-size: 16px;
+      }
+    }
+  }
+}
+.content-list
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  align-content: flex-start;
+  justify-content: space-between;
+  min-height: 500px;
+  &-item {
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: calc(33% - 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background: #FFFFFF;
+    &.full {
+      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 15px 20px;
+      @include s991 {
+        width: 100%;
+      }
+      .content-list-item-title {
+        a {
+          font-family: "Passion One", cursive;
+          font-size: 20px;
+          font-weight: 700;
+          color: #288dab;
+        }
+      }
+      .content-list-item-text {
+        a {
+          font-size: 13px;
+          color: #2f3233;
+          font-weight: 300;
+          margin-top: 10px;
+          display: block;
+          width: 100%;
+          margin-bottom: 0;
+        }
+      }
+    }
+    @include s991 {
+      width: 100%;
+      min-width: auto;
+    }
+    .content-list-item-text {
+      a {
+        font-family: "Passion One", cursive;
+        font-size: 20px;
+        font-weight: 700;
+        color: #288dab;
+      }
+    }
+    &-tags {
+      margin-top: 10px;
+      text-align: center;
+      a {
+        display: inline-block;
+        font-size: 12px;
+        color: #2f3233;
+        margin-bottom: 10px;
+        background-color: #063d7e;
+        color: #ffffff;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .post-categories {
+        font-weight: bold;
+        li {
+          display: inline;
+          margin-right: 10px;
+          a {
+            padding: 0;
+            background-color: transparent;
+            margin-bottom: 10px;
+            color: #000000;
+          }
+        }
+      }
+    }
+    &:hover {
+      background-color: #288dab;
+      .content-list-item-title a,
+      .content-list-item-text a,
+      .content-list-item-tags,
+      .content-list-item-tags a {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.page-numbers {
+  display: inline-flex;
+  width: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  column-count: 1;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  width: 100%;
+  li {
+    color: #288dab;
+    width: 40px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 4px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include s991 {
+      min-width: 27%;
+    }
+    &:hover {
+      background-color: #288dab;
+      color: #288dab;
+      a,
+      span {
+        color: #fff;
+      }
+    }
+    i {
+      font-style: normal;
+    }
+    a,
+    span {
+      color: #288dab;
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+footer {
+  font-family: "Passion One", cursive;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-content: center;
+  background-color: #fff;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  color: #288dab;
+  background-color: #f3f3f3;
+}
