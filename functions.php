@@ -17,6 +17,7 @@ function replace_text_wps($text){
       '#8217;'=>'\'',
       '#8212;'=>'--',
       '#8216;'=>'\'',
+      '#8211;'=>'-',
   );
   $text = str_replace(array_keys($replace), $replace, $text);
   return $text;
@@ -182,5 +183,14 @@ function te_css_replacetag($replacetag) {
 function remove_br_gallery($output) {
     return preg_replace('/<br style=(.*)>/mi', '', $output);
 }
+
+function cmyee_allowed_mime_types( $mime_types ) {
+  //AVIF Images
+  $mime_types['avif'] = 'image/avif';
+
+  return $mime_types;
+}
+
+add_filter( 'upload_mimes', 'cmyee_allowed_mime_types', 1, 1 );
 ?>
 

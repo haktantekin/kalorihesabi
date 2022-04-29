@@ -54,12 +54,3 @@
   </header>
   <main>
     <div class="container">
-      <section class="search-box top">
-        <form method="get" action="<?php bloginfo('url'); ?>">
-          <input class="search-text" type="text" placeholder="besin ara..." autocomplete="off" list="searchtext_s"
-            name="s" />
-          <div class="input-button">
-            <input class="search-button" type="button" value="arama" src="<?php bloginfo('url'); ?>" />
-          </div>
-        </form>
-      </section>

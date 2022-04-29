@@ -8,7 +8,9 @@
         <form method="get" action="<?php bloginfo('url'); ?>">
                 <input class="search-text" type="text" placeholder="besin ara..." autocomplete="off" list="searchtext_s" name="s" />
                 <div class="input-button">
-                    <input class="search-button" type="button" value="arama" src="<?php bloginfo('url'); ?>" />
+                    <button class="search-button" type="button" src="<?php bloginfo('url'); ?>"> 
+                    <i class="fa fa-search"></i>
+                    </button>
                 </div>
             </form>
         </div>
