@@ -16,3 +16,24 @@ document.querySelector('.js-nav-icon').addEventListener('click', function () {
         nav.style.display = "none";
     }
 });
+
+
+function sidebar(){
+    var sidebar = document.getElementById("sidebar");
+    var stop = (sidebar.offsetTop - 60);
+
+
+    window.onscroll = function (e) {
+        if (window.innerWidth > 991)
+        {
+            var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+            if (scrollTop >= stop) {
+                sidebar.className = 'fixed';
+            } else {
+                sidebar.className = '';
+            }
+        }
+    }
+}
+sidebar();
+window.addEventListener('change', sidebar);
