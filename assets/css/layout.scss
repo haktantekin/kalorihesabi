@@ -786,3 +786,116 @@ footer {
     width: 23%;
   }
 }
+
+.weight-calc{
+    input[type="range"]{
+      width: 70%;
+      height: 3.5px;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: #dcdcdc;
+      border-radius: 3px;
+      outline: none;
+  }
+  input[type="range"]::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      appearance: none;
+      height: 15px;
+      width: 15px;
+      background-color: #1c1c1c;
+      border-radius: 50%;
+      cursor: pointer;
+  }
+  #result{
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+      color: #0be881;
+      @include s991 {
+        font-size: 24px;
+      }
+  }
+  #category{
+      font-size: 18px;
+      text-align: center;
+      letter-spacing: 1px;
+      @include s991 {
+        font-size: 14px;
+      }
+  }
+  .weight-display{
+    box-shadow: 0 0 20px rgba(0,139,253,0.25);
+    padding: 20px;
+    width: 40%;
+    display: block;
+    margin: 60px auto 60px;
+    @include s991 {
+      width:100%;
+    }
+  }
+  .weight-row{
+    position: relative;
+    left: 50%;
+    transform: translateX(-37%);
+    margin-bottom: 20px;
+    @include s991 {
+      left: 0;
+      transform: initial;
+      width: 100%;
+    }
+  }
+}
+
+.calori-calc{
+  form{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    @include s991 {
+      width: 100%;
+    }
+    p{
+      margin: 0;
+    }
+    .form__group{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+    label{
+      @include s991 {
+        width: 73px;
+      }
+    }
+    input, select {
+      border: 1px solid #d1d1d1;
+      border-radius: 6px;
+      height: 40px;
+      font-weight: 500;
+      text-align: center;
+      padding-left: 0;
+      width: 150px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #288dab;
+      @include s991 {
+        width: 110px;
+      }
+    }
+    button{
+      background: #288dab;
+      border: 0;
+      color: #FFFFFF;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .result__content{
+      li{
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

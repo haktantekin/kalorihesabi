@@ -4,10 +4,10 @@
 
 // Load plugins
 var gulp = require("gulp"),
-  sass = require("gulp-sass"),
+  sass = require('gulp-sass')(require('sass')),
   concat = require('gulp-concat'),
   minifyCSS = require('gulp-minify-css'),
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify-es').default;
 
 // CSS task
 function css() { 
