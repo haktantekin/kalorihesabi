@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap&subset=latin-ext");
+
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -603,7 +606,6 @@ header {
 }
 
 footer {
-  
   width: 100%;
   height: 50px;
   display: flex;
@@ -749,7 +751,7 @@ footer {
   flex-wrap: nowrap;
   flex-direction: row;
   margin-top:10px;
-  &.head {
+  &:nth-child(1) {
     border-bottom: 1px solid #000;
     padding: 10px 0;
     margin: 10px 0;
@@ -761,19 +763,34 @@ footer {
     width:33%
   }
 }
+.content-table{
+  display: none;
+}
+.lwptoc_itemWrap{
+  padding: 20px 0;
+}
 
-.content-table {
+.lwptoc_header{
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.lwptoc_itemWrap {
   background-color: #d6e8ed;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 0;
   border-radius: 5px;
   text-align: left;
 
-  li{
+  .lwptoc_item{
     @include s991 {
       margin-bottom: 20px;
     }
     &:last-child{
+      margin-bottom: 0;
+    }
+    .lwptoc_itemWrap{
+      padding: 0 20px;
       margin-bottom: 0;
     }
   }
