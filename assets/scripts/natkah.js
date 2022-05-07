@@ -182,6 +182,10 @@ document.querySelector('.content-cal-table').append(ul)
     let vitAData = parseFloat(selectedSet.vit_a_iu).toFixed(2)
     let vitCData = parseFloat(selectedSet.vit_c).toFixed(2)
     let ironData = parseFloat(selectedSet.iron).toFixed(2)
+
+    if(!countInput){
+        countInput = 1;
+    }
       
     selectText = document.querySelectorAll('.content-cal-form-item select')[0].selectedOptions[0].text
     unitTitle.innerText = countInput + ' ' + selectText;
@@ -218,6 +222,10 @@ document.querySelector('.content-cal-table').append(ul)
      let vitAData = parseFloat(selectedSet.vit_a_iu).toFixed(2)
      let vitCData = parseFloat(selectedSet.vit_c).toFixed(2)
      let ironData = parseFloat(selectedSet.iron).toFixed(2)
+
+     if(!countInputBox){
+        countInputBox = 1;
+    }
 
      unitTitle.innerText = countInputBox + ' ' + selectText
 
