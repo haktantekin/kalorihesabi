@@ -12,15 +12,16 @@
                 ?>
                 <div class="content-list-item">
                 <div class="content-list-item-left">
-                    <a href="<?php the_permalink(); ?>">
-                    <?php if(has_post_thumbnail()) { the_post_thumbnail('medium');   } 
-                        elseif( $thumbnail = get_post_meta($post->ID, 'resim', true) ){  ?>
-                        <picture>
-                        <source width="233" height="155" srcSet="<?php echo $thumbnail; ?>" type="image/avif" />
-                        <img width="233" height="155" decoding="async" loading="lazy" src="<?php echo $thumbnail; ?>" alt="<?php the_title(); ?>" />
-                        </picture>
-                    <?php } ?>
-                    </a>
+                <a href="<?php the_permalink(); ?>">
+                  <?php if (has_post_thumbnail()) { ?>
+                    <picture alt="<?php the_title(); ?>">
+                    <source width="233" height="155" srcSet="<?php echo $url ?>" type="image/avif"  alt="<?php the_title(); ?>" />
+                    <img width="233" height="155" decoding="async" loading="lazy" src="<?php echo $url ?>" alt="<?php the_title(); ?>" />
+                    </picture>
+                    <?php } else { ?>
+                  <img alt="<?php the_title(); ?>" src="<?php echo 'https://kalorihesabi.com/wp-content/uploads/2022/05/kalori-hesabi.heic' ?>" />
+                  <?php }  ?>
+                </a>
                 </div>
                 <div class="content-list-item-right">
                     <div class="content-list-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>

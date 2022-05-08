@@ -522,6 +522,10 @@ header {
       }
     }
     &-left{
+      width: 20%;
+      @include s991 {
+        width: 100%;
+      }
       img{
         width: 100%;
         height: auto;
@@ -531,6 +535,12 @@ header {
          max-width: none;
         }
 
+      }
+    }
+    &-right{
+      width: 80%;
+      @include s991 {
+        width: 100%;
       }
     }
     &-info{
