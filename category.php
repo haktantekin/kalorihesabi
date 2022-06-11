@@ -1,18 +1,8 @@
 
 <?php get_header(); ?>
-<section class="search-box top">
-    <form method="get" action="<?php bloginfo('url'); ?>">
-        <input class="search-text" type="text" placeholder="besin ara..." autocomplete="off" list="searchtext_s"
-        name="s" />
-        <div class="input-button">
-          <button class="search-button" type="button"  src="<?php bloginfo('url'); ?>"> 
-           <i class="fa fa-search"></i>
-          </button>
-        </div>
-    </form>
-</section>
 <section class="content content-list">
 <h1><?php printf(__('%s', 'natdic'), single_cat_title('', false)); ?> </h1>
+<div class="content-h-8">
   <?php wp_reset_query(); ?> 
   <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
@@ -36,7 +26,6 @@
                 </a>
               </div>
               <div class="content-list-item-right">
-                <div class="content-list-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="content-list-item-info">
                   <div class="content-list-item-info-date">
                       <i class="fa fa-calendar-times"></i>
@@ -51,12 +40,16 @@
                       <?php the_tags(' ',' '); ?>
                   </div>
                 </div>
+                <div class="content-list-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="content-list-item-text"><a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a></div>
               </div>
           </div>
+
       <?php endwhile; ?>
       <?php wpex_pagination(); ?>
   <?php endif; ?>
   <?php wp_reset_query(); ?>
+  </div>
+  <div class="content-h-4">  <?php get_sidebar(); ?></div>
 </section>
 <?php get_footer(); ?>

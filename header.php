@@ -42,7 +42,7 @@
   <header>
     <div class="container">
       <div class="header-flex">
-        <div class="logo"><a href="/">kalorihesabi.com</a></div>
+        <div class="logo"><a href="/">Kalori Hesabı</a></div>
         <div class="nav-icon js-nav-icon">
           <i class="fas fa-ellipsis-v"></i>
         </div>

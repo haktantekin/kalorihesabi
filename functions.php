@@ -89,7 +89,9 @@ add_image_size( 'single-post-thumbnail', 1200, 675);
 function register_my_menus() {
   register_nav_menus(
     array(
-      'Header' => __( 'Header' )
+      'Header' => __( 'Header' ),
+      'Info' => __( 'Info' )
+
     
     )
   );

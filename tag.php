@@ -24,7 +24,6 @@
                 </a>
                 </div>
                 <div class="content-list-item-right">
-                    <div class="content-list-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                     <div class="content-list-item-info">
                         <div class="content-list-item-info-date">
                             <i class="fa fa-calendar-times"></i>
@@ -39,6 +38,7 @@
                             <?php the_tags(' ',' '); ?>
                         </div>
                     </div>
+                    <div class="content-list-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                     <div class="content-list-item-text"><a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a></div>
                 </div>
             </div>

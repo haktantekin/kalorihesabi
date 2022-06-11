@@ -14,7 +14,6 @@ function css() {
   return gulp
     .src(
       [
-        "./assets/css/all.min.css",
         "./assets/css/layout.scss"
       ])
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
