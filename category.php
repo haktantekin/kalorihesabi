@@ -2,6 +2,7 @@
 <?php get_header(); ?>
 <section class="content content-list">
 <h1><?php printf(__('%s', 'natdic'), single_cat_title('', false)); ?> </h1>
+<div class="category-description"><p><?php echo category_description(); ?></p></div>
 <div class="content-h-8">
   <?php wp_reset_query(); ?> 
   <?php if (have_posts()) : ?>
@@ -27,10 +28,10 @@
               </div>
               <div class="content-list-item-right">
                 <div class="content-list-item-info">
-                  <div class="content-list-item-info-date">
+                  <!-- <div class="content-list-item-info-date">
                       <i class="fa fa-calendar-times"></i>
                       <?php echo get_the_date( 'd-m-Y' ); ?>
-                  </div>
+                  </div> -->
                   <div class="content-list-item-info-cat">
                       <i class="fa fa-tag"></i>
                       <?php the_category(', ') ?>

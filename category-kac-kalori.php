@@ -1,6 +1,37 @@
+
 <?php get_header(); ?>
+
+
 <section class="content content-list">
-  <h1><span><?php printf(__('%s', 'nat kah'), get_search_query()); ?></span> sonuçları</h1>
+<h1><?php printf(__('%s', 'natdic'), single_cat_title('', false)); ?> </h1>
+<div class="category-description"><p><?php echo category_description(); ?></p>
+</div>
+<button id="moreBtn" onClick="more()">Daha Fazla...</button>
+<section class="sub-cat-list">
+<?php
+if (is_category()) {
+    $this_category = get_category($cat);
+    }
+    ?>
+    <?php
+    if($this_category->category_parent)
+    $this_category = wp_list_categories('orderby=id&show_count=0
+    &title_li=&use_desc_for_title=1&child_of='.$this_category->category_parent.
+    "&echo=0"); else
+    $this_category = wp_list_categories('orderby=name&depth=1&show_count=0
+    &title_li=&use_desc_for_title=1&child_of='.$this_category->cat_ID.
+    "&echo=0");
+    if ($this_category) { ?> 
+  
+<ul>
+<?php echo $this_category; ?>
+  
+</ul>
+  
+<?php } ?>
+</section>
+
+  <h3 class="sub-cat-title">Tüm Besinler</h3>
   <?php wp_reset_query(); ?> 
   <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
@@ -10,9 +41,9 @@
             $category_name = $the_cat[0]->cat_name;
             $category_link = get_category_link($the_cat[0]->cat_ID);
             ?>
-            <div class="content-list-item">
+            <div class="content-list-item content-list-item-three">
               <div class="content-list-item-left">
-              <a href="<?php the_permalink(); ?>">
+                <a href="<?php the_permalink(); ?>">
                   <?php if (has_post_thumbnail()) { ?>
                     <picture alt="<?php the_title(); ?>">
                     <source width="233" height="155" srcSet="<?php echo $url ?>" type="image/avif"  alt="<?php the_title(); ?>" />
@@ -25,6 +56,10 @@
               </div>
               <div class="content-list-item-right">
                 <div class="content-list-item-info">
+                  <!-- <div class="content-list-item-info-date">
+                      <i class="fa fa-calendar-times"></i>
+                      <?php echo get_the_date( 'd-m-Y' ); ?>
+                  </div> -->
                   <div class="content-list-item-info-cat">
                       <i class="fa fa-tag"></i>
                       <?php the_category(', ') ?>
@@ -38,9 +73,11 @@
                 <div class="content-list-item-text"><a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a></div>
               </div>
           </div>
+
       <?php endwhile; ?>
       <?php wpex_pagination(); ?>
   <?php endif; ?>
   <?php wp_reset_query(); ?>
+
 </section>
 <?php get_footer(); ?>

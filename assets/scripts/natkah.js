@@ -11,6 +11,10 @@ document.querySelector('.js-nav-icon').addEventListener('click', function () {
     }
 });
 
+if(document.querySelectorAll('.category-description p').length < 2){
+    document.querySelector('.category-description').style.display = "none";
+ }
+
 
 function sidebar(){
     let sidebar = document.getElementById("sidebar");
@@ -261,3 +265,16 @@ document.querySelector('.content-cal-table').append(ul)
     selectChange()
  }
  calculateKey();
+
+ function more(){
+    if(document.querySelector('.category-description').style.height !== "100%"){
+        document.querySelector('.category-description').style.height = "100%";
+        document.querySelector('#moreBtn').innerHTML = "Daha Az...";
+    }
+    else{
+        document.querySelector('.category-description').style.height = "200px";
+        document.querySelector('#moreBtn').innerHTML = "Daha Fazla...";
+        window.scrollTo(0, 0);
+    }
+ }
+

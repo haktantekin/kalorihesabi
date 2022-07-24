@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 
 <head>
     <title><?php wp_title(); ?></title>
