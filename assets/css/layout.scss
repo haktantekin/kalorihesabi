@@ -539,11 +539,13 @@ header {
     width: calc(100% - 40px);
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 20px;
     padding: 20px 0;
-    border-bottom: 1px solid #c7c7c7;
+    &-text {
+      display: none;
+    }
     &:first-child {
       padding-top: 0;
     }
@@ -1224,7 +1226,7 @@ footer {
 }
 
 .content-list-item-three {
-  width: calc(50% - 40px);
+  width: calc(33% - 20px);
   justify-content: flex-start;
   @include s991 {
     width: 100%;
@@ -1233,12 +1235,14 @@ footer {
     width: 100%;
     justify-content: flex-start;
     gap: 40px;
+    display: block;
     img {
       width: 100%;
       height: auto;
       max-width: 100%;
       max-height: initial;
       min-height: auto;
+      max-height: 240px;
     }
   }
   .content-list-item-right {
@@ -1283,11 +1287,226 @@ footer {
 }
 
 #moreBtn {
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
   border: 0;
   color: #288dab;
   border-bottom: 1px solid #288dab;
   font-size: 14px;
   padding-bottom: 10px;
   cursor: pointer;
+}
+.header-bottom {
+  background-color: #eeeeee;
+  padding: 10px 0;
+  @include s991 {
+    padding: 20px 0;
+  }
+  &-flex {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    @include s991 {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .search {
+      position: relative;
+      input[type="text"] {
+        width: 100%;
+        border: none;
+        height: 40px;
+        padding: 0px 21px;
+        border-radius: 7px;
+        -webkit-box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+        -moz-box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+        box-shadow: 0px 0px 10px -1px rgba(212, 212, 212, 1);
+        background-color: #f9f9f9;
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 5px #288dab;
+          border: 1px solid #288dab;
+        }
+      }
+      .input-button {
+        position: absolute;
+        right: 1px;
+        top: 0;
+        height: 40px;
+        width: 19%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 0 7px 7px 0;
+        cursor: pointer;
+        cursor: pointer;
+        .search-button {
+          border: none;
+          background: 0 0;
+          color: #000;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      }
+    }
+    .social {
+      ul {
+        display: flex;
+        gap: 20px;
+        li {
+          i {
+            font-size: 18px;
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content-list-default {
+  h2 {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    a {
+      color: #288dab;
+    }
+  }
+}
+.default-calc-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  @include s991 {
+    flex-direction: column;
+  }
+  a {
+    width: calc(33% - 20px);
+    background-color: #7abed3;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    @include s991 {
+      width: 100%;
+    }
+  }
+}
+
+.read-more {
+  color: #288dab;
+  border-bottom: 1px dashed #288dab;
+  font-size: 17px;
+  cursor: pointer;
+  margin: 0 auto;
+  font-weight: 800;
+  a {
+    color: #288dab;
+  }
+}
+
+.cal-to-kilo-cont {
+  text-align: center;
+  h1 {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    font-size: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 10px;
+    color: #000;
+  }
+  input {
+    border: none;
+    border-bottom: 1px dashed #288dab;
+    background: transparent;
+    padding: 0 0 10px 0;
+    color: #288dab;
+    font-weight: 600;
+    max-width: 60px;
+    text-align: center;
+  }
+  #calToKiloText {
+    display: inline;
+    margin-left: 10px;
+  }
+  .form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  #outputKilograms {
+    background-color: #288dab;
+    padding: 10px;
+    color: #ffff;
+    border-radius: 10px;
+  }
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 55;
+  display: flex;
+  font-size: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-loader {
+  --clock-color: #288dab;
+  --clock-width: 4rem;
+  --clock-radius: calc(var(--clock-width) / 2);
+  --clock-minute-length: calc(var(--clock-width) * 0.4);
+  --clock-hour-length: calc(var(--clock-width) * 0.2);
+  --clock-thickness: 0.2rem;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--clock-width);
+  height: var(--clock-width);
+  border: 3px solid #288dab;
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--clock-radius) * 0.25);
+    width: var(--clock-thickness);
+    background: #288dab;
+    border-radius: 10px;
+    transform-origin: center calc(100% - calc(var(--clock-thickness) / 2));
+    animation: spin infinite linear;
+  }
+
+  &::before {
+    height: var(--clock-minute-length);
+    animation-duration: 2s;
+  }
+
+  &::after {
+    top: calc(var(--clock-radius) * 0.25 + var(--clock-hour-length));
+    height: var(--clock-hour-length);
+    animation-duration: 15s;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
 }

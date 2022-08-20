@@ -78,6 +78,5 @@ if (is_category()) {
       <?php wpex_pagination(); ?>
   <?php endif; ?>
   <?php wp_reset_query(); ?>
-
 </section>
 <?php get_footer(); ?>
